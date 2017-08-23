@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ELC</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+      <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">ELC</a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>Electrical Load Calculation</h1>
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show Menu</a>
+            </div>
+            <div class="container-fluid mt20">
+                <label class="radio-inline">
+                    <input type="radio" name="optradio" value="ac" checked>AC
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio" value="dc">DC
+                </label>
+                <!-- <label class="radio-inline">
+                <input type="radio" name="optradio" value="hybrid">Hybrid
+                </label> -->
+            </div>
+
+<div class="row">
+<div class="col-md-9">
+            <div class="jumbotron" style="overflow-x:auto;">
+                <table class="order-list" id="myTable">
+                    <thead>
+                        <tr><td>Sl.No</td><td>Equipment Name</td><td>Qty</td><td>Watts</td><td>Usage Hour</td><td>Total Watts/Day</td><td>Total Energy/Day</td></tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><input type="number" name="slno" class="slno" id="slno" value="1" disabled /></td>
+                            <td><input type="text" name="eqname" class="eqname" id="eqname" /></td>
+                            <td><input type="number" name="qty" class="qty" id="qty" /></td>
+                            <td><input type="number" name="watts" class="watts" id="watts" /></td>
+                            <td><input type="number" name="use_hour" class="use_hour" id="use_hour"/></td>
+                            <td><input type="number" name="wpd" class="wpd" id="wpd"  disabled /></td>
+                            <td><input type="number" name="epd" class="epd" id="epd" disabled /></td>
+                            <td><a class="deleteRow"> X </a></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">
+                                <input type="button" id="addrow" value="Add Equipment" />
+                            </td>
+                            <td colspan="2">
+                                Total Watts: <span id="totalwatts"></span>
+                            </td>
+                            <td>
+                                Total Energy: <span id="totalenergy"></span>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+<!-- TABLEENDS -->
+
+ <div class="row calc-rows">
+   <div class="col-md-6">
+        <div class="jumbotron">
+            <h2>Solar Rating</h2>
+                <div class="row mt20">
+                    <div class="col-sm-6">Peak Sun Hours (PSW)</div>
+                    <div class="col-sm-3"><input type="number" name="custom_value1" value="7.5" style="width: 100%"></div>
+                    <div class="col-sm-3" style="display: -webkit-box;"><input type="number" name="custom_value2" value="4.0" style="width: 100%"><p class="rotate" style="font-size: 13px;">kwh/m<sup>2</sup></p></div>
+                    <!-- <div class="col-sm-2">kwh/m<sup>2</sup></div> -->
+                </div>
+                <div class="row mt20">
+                    <div class="col-sm-6">Solar Efficiency Loss</div>
+                    <div class="col-sm-6"><input type="number" name="sel" style="width: 75%">%</div>
+                </div>
+                <div class="row mt20">
+                    <div class="col-sm-6">Solar Rating</div>
+                    <div class="col-sm-6"><input type="number" name="sr" style="width: 65%" disabled>watts</div>
+                </div>
+            </div>
+        </div>
+   <div class="col-md-6">
+        <div class="jumbotron">
+            <h2>Battery Sizing</h2>  
+                <div class="row mt20">
+                    <div class="col-sm-6">Depth of Discharge (DOD)</div>
+                    <div class="col-sm-6"><input type="number" name="dod" style="width: 75%" value="50">%</div>
+                </div>
+                <div class="row mt20">
+                    <div class="col-sm-6">Days of Autonomy</div>
+                    <div class="col-sm-6"><input type="number" name="doa" style="width: 75%" value= "1">Days</div>
+                </div>
+                <div class="row mt20">
+                    <div class="col-sm-6">Battery Size</div>
+                    <div class="col-sm-6"><input type="number" name="bs" style="width: 75%" disabled>Ah</div>
+                </div>
+        </div>
+   </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+    <div class="jumbotron">
+        <div class="form-group">
+          <label for="sbs" style="font-size: 15px;">Solar Battery Selection:</label>
+          <select class="form-control" id="sbs">
+            <option>Select</option>
+            <option value="100">100ah</option>
+            <option value="150">150ah</option>
+            <option value="200">200ah</option>
+            <option value="250">250ah</option>
+          </select>
+        </div>
+        <input type="text" name="bat_num" style="width: 75%">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="jumbotron">
+            <div class="form-group">
+          <label for="sbs">Panel Selection:</label>
+          <select class="form-control" id="panel_val" placeholder="Select">
+          <option>Select</option>
+            <option value="80">80W,18V</option>
+            <option value="100">100W,18W</option>
+            <option value="150">150W,18V</option>
+            <option value="200">200W,24V</option>
+            <option value="250">250W,24V</option>
+          </select>
+        </div>
+        <input type="text" name="pan_num" style="width: 75%">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="jumbotron">
+            <div class="form-group">
+          <label for="sbs">Inverter:</label>
+          <select class="form-control" id="inverter">
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+          </select>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="jumbotron">
+            <div class="form-group">
+          <label for="sbs">Charge Controller:</label>
+          <select class="form-control" id="charge_ctrl">
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+          </select>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="col-md-3">
+    <div class="jumbotron report"></div>
+</div>
+</div>
+
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+   
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>

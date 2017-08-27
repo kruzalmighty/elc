@@ -147,3 +147,159 @@ body {
   /* Standard */
   transform: rotate(-90.0deg);
 }
+
+.order-list {
+    table-layout:fixed;
+    width: 100%;
+}
+
+.order-list input{
+    width: 90%;
+}
+
+.order-list td, .order-list tr{
+    font-size: 12px;
+}
+
+table.order-list.order-list th:nth-child(3), td:nth-child(3) {
+  display: none;
+}
+
+
+
+/* your custom CSS \*/
+</style>
+<!-- access to the HEAD element, you must use this in the CSS panel
+http://doc.jsfiddle.net/use/hacks.html#css-panel-hack -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+
+body{
+padding:10px;
+}
+
+.label{
+font-weight:bold;
+}
+
+
+/* seo friendly tables */
+table.order-list{
+    display:table;    /* Defines a Table */
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px;
+    border-bottom:2px solid #dddddd;
+    color:#8d8d8d;
+    margin:10px 0;
+}
+
+.order-list thead td,
+.order-list thead th,
+.order-list th{ /* Column inside the table-head */
+    background:#333333;
+    color:#7d7d7d;
+    padding:10px 20px;
+    border-right:1px solid #5d5d5d;
+    border-bottom:none;
+}
+.order-list thead:hover{ /* Column hover inside the table-head */
+    background:#222222;
+}
+.order-list tr{
+    display:table-row; /* Defines a table row */
+}
+.order-list tr td:nth-child(1){ /* First column in a row */
+    border-left:1px solid #eeeeee;
+}
+.order-list tr:last-child td{  /* column in a last row */
+    border-bottom:none;
+}
+
+.order-list td{
+    display:table-cell; /* Defines a table cell */
+    padding:10px 20px;
+    border-bottom:1px solid #eeeeee;
+    border-right:1px solid #eeeeee;
+}
+.order-list td:hover{
+    background:#f9f9f9;
+}
+/* Responsive table */
+@media all and (max-width: 450px){
+
+    
+table.order-list,
+.order-list thead,
+.order-list tfoot,
+.order-list tbody,
+.order-list tr,
+.order-list th,
+.order-list td{display:block;
+    width:100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float:left;
+    clear:both;
+}
+    
+    
+    .order-list th,.order-list td{
+border-right:none;
+}
+.order-list tr:nth-child(odd){
+ background-color:#222222;
+ color:white;
+}
+
+.order-list tr:nth-child(odd) td:hover{
+  background:#3F3D3D;
+}
+    
+    table.order-list,
+    .order-list tr,
+    .order-list tbody,
+    .order-list td,
+    .order-list td:before,
+    .order-list th{
+    //    display:block;    /* Converts a table, table row, table column and table column:before into a block element */
+    }
+
+    table.order-list,
+    .order-list tr td:last-child{
+        border-bottom:none;
+    }
+    .order-list thead{
+        position:absolute;    /* Hides table head but not using display none */
+        top:-1000em;
+        left:-1000em;
+    }
+    .order-list tr{
+        border:1px solid #eeeeee;
+        border-top:2px solid #dddddd;
+        border-bottom:2px solid #dddddd;
+        margin:20px 0;
+    }
+    .order-list tr td:nth-child(1){ /* first column of the row */
+        border-left:none;
+    }
+    .order-list tr td:last-child{ /* last column of the row */
+        border-right:none;
+    }
+    .order-list tr:last-child td,
+    .order-list td{ /* Column in the last row and column */
+        border-bottom:1px solid #eeeeee;
+    }
+    .order-list td:before{ /* prints the value of data-label attribute before the column data */
+        font-weight:bold;
+        padding-right:20px;
+        font-size:14px;
+        display:block;        
+        content:" "attr(data-label)":";    /* call the attribute value of data-label and adds a string // */
+    }
+
+.order-list td[data-label]{
+clear:both;
+}
+
+}

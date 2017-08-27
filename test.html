@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ELC</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendor/jquery/dataTables.responsive.css" rel="stylesheet">
+    <link href="vendor/jquery/jquery-ui.css" rel="stylesheet">
+    <link href="vendor/jquery/jquery.dataTables.css" rel="stylesheet">
+    <style>
+        /* your custom CSS \*/
+</style>
+<!-- access to the HEAD element, you must use this in the CSS panel
+http://doc.jsfiddle.net/use/hacks.html#css-panel-hack -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+
+body{
+padding:10px;
+}
+
+.label{
+font-weight:bold;
+}
+
+
+/* seo friendly tables */
+table{
+    display:table;    /* Defines a Table */
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px;
+    border-bottom:2px solid #dddddd;
+    color:#8d8d8d;
+    margin:10px 0;
+}
+
+thead td,
+thead th,
+th{ /* Column inside the table-head */
+    background:#333333;
+    color:#7d7d7d;
+    padding:10px 20px;
+    border-right:1px solid #5d5d5d;
+    border-bottom:none;
+}
+thead:hover{ /* Column hover inside the table-head */
+    background:#222222;
+}
+tr{
+    display:table-row; /* Defines a table row */
+}
+tr td:nth-child(1){ /* First column in a row */
+    border-left:1px solid #eeeeee;
+}
+tr:last-child td{  /* column in a last row */
+    border-bottom:none;
+}
+
+td{
+    display:table-cell; /* Defines a table cell */
+    padding:10px 20px;
+    border-bottom:1px solid #eeeeee;
+    border-right:1px solid #eeeeee;
+}
+td:hover{
+    background:#f9f9f9;
+}
+/* Responsive table */
+@media all and (max-width: 320px){
+
+    
+table,
+thead,
+tfoot,
+tbody,
+tr,
+th,
+td{display:block;
+    width:100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float:left;
+    clear:both;
+}
+    
+    
+    th,td{
+border-right:none;
+}
+tr:nth-child(odd){
+ background-color:#222222;
+ color:white;
+}
+
+tr:nth-child(odd) td:hover{
+  background:#3F3D3D;
+}
+    
+    table,
+    tr,
+    tbody,
+    td,
+    td:before,
+    th{
+    //    display:block;    /* Converts a table, table row, table column and table column:before into a block element */
+    }
+
+    table,
+    tr td:last-child{
+        border-bottom:none;
+    }
+    thead{
+        position:absolute;    /* Hides table head but not using display none */
+        top:-1000em;
+        left:-1000em;
+    }
+    tr{
+        border:1px solid #eeeeee;
+        border-top:2px solid #dddddd;
+        border-bottom:2px solid #dddddd;
+        margin:20px 0;
+    }
+    tr td:nth-child(1){ /* first column of the row */
+        border-left:none;
+    }
+    tr td:last-child{ /* last column of the row */
+        border-right:none;
+    }
+    tr:last-child td,
+    td{ /* Column in the last row and column */
+        border-bottom:1px solid #eeeeee;
+    }
+    td:before{ /* prints the value of data-label attribute before the column data */
+        font-weight:bold;
+        padding-right:20px;
+        font-size:14px;
+        display:block;        
+        content:" "attr(data-label)":";    /* call the attribute value of data-label and adds a string // */
+    }
+
+td[data-label]{
+clear:both;
+}
+
+}
+
+    </style>
+</head>
+
+<body>
+
+
+<table class="first">
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Job Title</th>
+            <th>Favorite Color</th>
+            <th>Wars or Trek?</th>
+            <th>Fictional Name</th>
+            <th>Date of Birth</th>
+            <th>Dream Vacation City</th>
+            <th>GPA</th>
+            <th>Arbitrary Data</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>James</td>
+            <td>Matman</td>
+            <td>Chief Sandwich Eater</td>
+            <td>Lettuce Green</td>
+            <td>Trek</td>
+            <td>Digby Green</td>
+            <td>January 13, 1979</td>
+            <td>Gotham City</td>
+            <td>3.1</td>
+            <td>RBX-12</td>
+        </tr>
+        <tr>
+          <td>The</td>
+          <td>Tick</td>
+          <td>Crimefighter Sorta</td>
+          <td>Blue</td>
+          <td>Wars</td>
+          <td>John Smith</td>
+          <td>July 19, 1968</td>
+          <td>Athens</td>
+          <td>N/A</td>
+          <td>Edlund, Ben (July 1996).</td>
+        </tr>
+        <tr>
+          <td>Jokey</td>
+          <td>Smurf</td>
+          <td>Giving Exploding Presents</td>
+          <td>Smurflow</td>
+          <td>Smurf</td>
+          <td>Smurflane Smurfmutt</td>
+          <td>Smurfuary Smurfteenth, 1945</td>
+          <td>New Smurf City</td>
+          <td>4.Smurf</td>
+          <td>One</td>
+        </tr>
+        <tr>
+          <td>Cindy</td>
+          <td>Beyler</td>
+          <td>Sales Representative</td>
+          <td>Red</td>
+          <td>Wars</td>
+          <td>Lori Quivey</td>
+          <td>July 5, 1956</td>
+          <td>Paris</td>
+          <td>3.4</td>
+          <td>3451</td>
+        </tr>
+        <tr>
+          <td>Captain</td>
+          <td>Cool</td>
+          <td>Tree Crusher</td>
+          <td>Blue</td>
+          <td>Wars</td>
+          <td>Steve 42nd</td>
+          <td>December 13, 1982</td>
+          <td>Las Vegas</td>
+          <td>1.9</td>
+          <td>Under the couch</td>
+        </tr>
+        </tbody>
+</table>
+    <!-- Bootstrap core JavaScript -->
+    
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery/jquery.dataTables.min.js"></script>
+    <script src="vendor/jquery/dataTables.responsive.js"></script>
+    <script src="vendor/jquery/jquery-ui.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+   
+    // the semi-colon before the function invocation is a safety
+// net against concatenated scripts and/or other plugins
+// that are not closed properly.
+(function($, window, document, undefined) {
+  $.fn.responsiveTables = function() {
+
+    // counts total number of td in a head so that we can can use it for label extraction
+    var head_col_count = $('thead th').size();
+
+    // only do this if we have something to work with
+    if ($(head_col_count).length) {
+    // returns the jQuery object to allow for chainability.  
+      return this.each(function() {
+        var $element = $(this);
+        // if we have a th or td in the table then loop over each
+        for (i = 0; i <= head_col_count; i++) {
+          // head column label extraction
+          var head_col_label = $element.find($('thead th:nth-child(' + i + ')')).text();          
+          $element.find($('tr td:nth-child(' + i + ')')).attr("data-label", head_col_label);
+        };
+      });
+    };
+  };
+})(jQuery, window, document);
+
+$('table').responsiveTables();
+    </script>
+
+</body>
+
+</html>

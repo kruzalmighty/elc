@@ -9,57 +9,48 @@
     <meta name="author" content="">
 
     <title>ELC</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
-      <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css">
-
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
-
+    <link href="vendor/jquery/dataTables.responsive.css" rel="stylesheet">
+    <link href="vendor/jquery/jquery-ui.css" rel="stylesheet">
+    <link href="vendor/jquery/jquery.dataTables.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <div id="wrapper">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">ELC</a>
-                </li>
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
-                <li>
-                    <a href="#">Shortcuts</a>
-                </li>
-                <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
             <div class="container-fluid">
                 <h1>Electrical Load Calculation</h1>
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Show sidemenu</a>
             </div>
             <div class="container-fluid mt20">
                 <label class="radio-inline">
@@ -72,15 +63,21 @@
                 <input type="radio" name="optradio" value="hybrid">Hybrid
                 </label> -->
             </div>
-
+<div class="container-fluid">
 <div class="row">
-<div class="col-md-9">
-            <div class="jumbotron" style="overflow-x:auto;">
-                <table class="order-list" id="myTable">
+<div class="col-md-9 well">
+                <table id="myTable" class="display order-list" cellspacing="0" width="100%">
                     <thead>
-                        <tr><td>Sl.No</td><td>Equipment Name</td><td>Qty</td><td>Watts</td><td>Usage Hour</td><td>Total Watts/Day</td><td>Total Energy/Day</td></tr>
+                        <tr>
+                            <td>Sl.No</td>
+                            <td>Appliance</td>
+                            <td>Qty</td>
+                            <td>Watts</td>
+                            <td>Usage Hour</td>
+                            <td>Total Watts/Day</td>
+                            <td>Total Energy/Day</td>
+                        </tr>
                     </thead>
-
                     <tbody>
                         <tr>
                             <td><input type="number" name="slno" class="slno" id="slno" value="1" disabled /></td>
@@ -90,15 +87,15 @@
                             <td><input type="number" name="use_hour" class="use_hour" id="use_hour"/></td>
                             <td><input type="number" name="wpd" class="wpd" id="wpd"  disabled /></td>
                             <td><input type="number" name="epd" class="epd" id="epd" disabled /></td>
-                            <td><a class="deleteRow"> X </a></td>
+                            <td><a class="deleteRow"> <span class="glyphicon glyphicon-minus-sign"></span></a></td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="4">
+                            <td colspan="5">
                                 <input type="button" id="addrow" value="Add Equipment" />
                             </td>
-                            <td colspan="2">
+                            <td colspan="1">
                                 Total Watts: <span id="totalwatts"></span>
                             </td>
                             <td>
@@ -107,12 +104,11 @@
                         </tr>
                     </tfoot>
                 </table>
-            </div>
 <!-- TABLEENDS -->
-
- <div class="row calc-rows">
+<br><br><br>
+ <div class="row calc-rows" style="margin-top: 150px;">
    <div class="col-md-6">
-        <div class="jumbotron">
+        <div class="">
             <h2>Solar Rating</h2>
                 <div class="row mt20">
                     <div class="col-sm-6">Peak Sun Hours (PSW)</div>
@@ -131,7 +127,7 @@
             </div>
         </div>
    <div class="col-md-6">
-        <div class="jumbotron">
+        <div class="">
             <h2>Battery Sizing</h2>  
                 <div class="row mt20">
                     <div class="col-sm-6">Depth of Discharge (DOD)</div>
@@ -150,7 +146,7 @@
 </div>
 <div class="row">
     <div class="col-md-3">
-    <div class="jumbotron">
+    <div class="">
         <div class="form-group">
           <label for="sbs" style="font-size: 15px;">Solar Battery Selection:</label>
           <select class="form-control" id="sbs">
@@ -165,7 +161,7 @@
         </div>
     </div>
     <div class="col-md-3">
-        <div class="jumbotron">
+        <div class="">
             <div class="form-group">
           <label for="sbs">Panel Selection:</label>
           <select class="form-control" id="panel_val" placeholder="Select">
@@ -181,7 +177,7 @@
         </div>
     </div>
     <div class="col-md-3">
-        <div class="jumbotron">
+        <div class="">
             <div class="form-group">
           <label for="sbs">Inverter:</label>
           <select class="form-control" id="inverter">
@@ -194,7 +190,7 @@
         </div>
     </div>
     <div class="col-md-3">
-        <div class="jumbotron">
+        <div class="">
             <div class="form-group">
           <label for="sbs">Charge Controller:</label>
           <select class="form-control" id="charge_ctrl">
@@ -208,30 +204,49 @@
     </div>
 </div>
 </div>
-<div class="col-md-3">
-    <div class="jumbotron report"></div>
+<div class="col-md-3 well">
+    <div class=" report"></div>
 </div>
 </div>
-
-        </div>
-        <!-- /#page-content-wrapper -->
-    </div>
-    <!-- /#wrapper -->
+</div>
 
     <!-- Bootstrap core JavaScript -->
     
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/jquery/jquery.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery/jquery.dataTables.min.js"></script>
+    <script src="vendor/jquery/dataTables.responsive.js"></script>
+    <script src="vendor/jquery/jquery-ui.js"></script>
     <script src="js/custom.js"></script>
 
-    <!-- Menu Toggle Script -->
     <script>
    
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
+    // the semi-colon before the function invocation is a safety
+// net against concatenated scripts and/or other plugins
+// that are not closed properly.
+(function($, window, document, undefined) {
+  $.fn.responsiveTables = function() {
+
+    // counts total number of td in a head so that we can can use it for label extraction
+    var head_col_count = $('thead th').size();
+
+    // only do this if we have something to work with
+    if ($(head_col_count).length) {
+    // returns the jQuery object to allow for chainability.  
+      return this.each(function() {
+        var $element = $(this);
+        // if we have a th or td in the table then loop over each
+        for (i = 0; i <= head_col_count; i++) {
+          // head column label extraction
+          var head_col_label = $element.find($('thead th:nth-child(' + i + ')')).text();          
+          $element.find($('tr td:nth-child(' + i + ')')).attr("data-label", head_col_label);
+        };
+      });
+    };
+  };
+})(jQuery, window, document);
+
+$('#myTable').responsiveTables();
     </script>
 
 </body>

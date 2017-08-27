@@ -21,7 +21,7 @@ $(document).ready(function () {
         cols += '<td><input type="number" class="use_hour" name="use_hour' + counter + '" id="use_hour' + counter + '"/></td>';
         cols += '<td><input type="number" class="wpd" name="wpd' + counter + '" id="wpd' + counter + '" disabled/></td>';
         cols += '<td><input type="number" class="epd" name="epd' + counter + '" id="epd' + counter + '" disabled/></td>';
-        cols += '<td><a class="deleteRow"> X </a></td>';
+        cols += '<td><a class="deleteRow"> <span class="glyphicon glyphicon-minus-sign"></span> </a></td>';
         newRow.append(cols);
         
         $("table.order-list").append(newRow);

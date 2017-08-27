@@ -2,6 +2,8 @@ var counter = 1;
 var row_conter = 1;
 var renum = 1;
 var totalenergy = 0;
+var totalenergy_save = 0;
+var totalwatts_save = 0;
 var val1 = $('[name="custom_value1"]').val();
 var bs = 0;
 var sr = 0;
@@ -21,7 +23,7 @@ $(document).ready(function () {
         cols += '<td><input type="number" class="use_hour" name="use_hour' + counter + '" id="use_hour' + counter + '"/></td>';
         cols += '<td><input type="number" class="wpd" name="wpd' + counter + '" id="wpd' + counter + '" disabled/></td>';
         cols += '<td><input type="number" class="epd" name="epd' + counter + '" id="epd' + counter + '" disabled/></td>';
-        cols += '<td><a class="deleteRow"> <span class="glyphicon glyphicon-minus-sign"></span> </a></td>';
+        cols += '<td class="delete-sign"><a class="deleteRow"> <span class="glyphicon glyphicon-minus-sign"></span> </a></td>';
         newRow.append(cols);
         
         $("table.order-list").append(newRow);
@@ -96,16 +98,20 @@ function calculateRow(row) {
 function calculatetotalwatts() {
     var totalwatts = 0;
     $("table.order-list").find('input[name^="wpd"]').each(function () {
-        totalwatts += +$(this).val();
+        totalwatts_save += +$(this).val();
+        $("#totalwatts").text(totalwatts_save.toFixed(2));
     });
-    $("#totalwatts").text(totalwatts.toFixed(2));
+    totalwatts=totalwatts_save;
+    totalwatts_save=0;
 }
 
 function calculatetotalenergy() {
     $("table.order-list").find('input[name^="epd"]').each(function () {
-        totalenergy += +$(this).val();
+        totalenergy_save += +$(this).val();
+    $("#totalenergy").text(totalenergy_save.toFixed(2));
     });
-    $("#totalenergy").text(totalenergy.toFixed(2));
+    totalenergy=totalenergy_save;
+    totalenergy_save=0;
 }
 
 function calculate_solar_rating() {

@@ -166,18 +166,6 @@ table.order-list.order-list th:nth-child(3), td:nth-child(3) {
 }
 
 
-
-/* your custom CSS \*/
-</style>
-<!-- access to the HEAD element, you must use this in the CSS panel
-http://doc.jsfiddle.net/use/hacks.html#css-panel-hack -->
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style>
-
-body{
-padding:10px;
-}
-
 .label{
 font-weight:bold;
 }
@@ -196,20 +184,17 @@ table.order-list{
 .order-list thead td,
 .order-list thead th,
 .order-list th{ /* Column inside the table-head */
-    background:#333333;
-    color:#7d7d7d;
-    padding:10px 20px;
-    border-right:1px solid #5d5d5d;
+    color:#000;
     border-bottom:none;
 }
-.order-list thead:hover{ /* Column hover inside the table-head */
+/*.order-list thead:hover{ 
     background:#222222;
 }
-.order-list tr{
+*/.order-list tr{
     display:table-row; /* Defines a table row */
 }
 .order-list tr td:nth-child(1){ /* First column in a row */
-    border-left:1px solid #eeeeee;
+    /*border-left:1px solid #eeeeee;*/
 }
 .order-list tr:last-child td{  /* column in a last row */
     border-bottom:none;
@@ -217,9 +202,9 @@ table.order-list{
 
 .order-list td{
     display:table-cell; /* Defines a table cell */
-    padding:10px 20px;
-    border-bottom:1px solid #eeeeee;
-    border-right:1px solid #eeeeee;
+    padding: 10px 5px;
+  /*  border-bottom:1px solid #eeeeee;
+    border-right:1px solid #eeeeee;*/
 }
 .order-list td:hover{
     background:#f9f9f9;
@@ -302,4 +287,60 @@ border-right:none;
 clear:both;
 }
 
+}
+
+
+.text-box{
+    padding: 2%;
+}
+.load-head{
+    margin-left: 2%;
+    background-color: #2E94B9;
+    color: #f7f7f7;
+}
+.order-list td.delete-sign{
+border: none;
+}
+.text-box{
+    border: 2px solid #ececec;
+}
+.load-head{
+    margin: 0 !important;
+}
+@media all and (min-width: 992px){
+   .text-box,.load-head{
+    width: 70%;
+} 
+}
+.main-div{
+    padding: 0 3%;
+}
+
+.load-head h3{
+    margin-bottom: 0!important;
+    margin-left: 2%;
+    padding: .5%;
+}
+
+.glyphicon-minus-sign{
+    color: #e60a0a;
+    font-size: 15px;
+}
+.calc-rows{
+    font-size: 12px;
+    padding: 1%;
+}
+.solar-box{
+    border: 1px solid #ececec;
+    padding: 30px;
+}
+
+#addrow{
+    /*width: 30%;*/
+}
+
+.select-row{
+    padding: 2%;
+    border: 1px solid #ececec;
+    margin-top: 20px;
 }

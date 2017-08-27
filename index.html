@@ -65,7 +65,9 @@
             </div>
 <div class="container-fluid">
 <div class="row">
-<div class="col-md-9 well">
+<div class="main-div">
+<div class="load-head"><h3>LOAD CALCULATION</h3></div>
+<div class="col-md-9 text-box">
                 <table id="myTable" class="display order-list" cellspacing="0" width="100%">
                     <thead>
                         <tr>
@@ -87,14 +89,15 @@
                             <td><input type="number" name="use_hour" class="use_hour" id="use_hour"/></td>
                             <td><input type="number" name="wpd" class="wpd" id="wpd"  disabled /></td>
                             <td><input type="number" name="epd" class="epd" id="epd" disabled /></td>
-                            <td><a class="deleteRow"> <span class="glyphicon glyphicon-minus-sign"></span></a></td>
+                            <td class="delete-sign"><a class="deleteRow"><span class="glyphicon glyphicon-minus-sign"></span></a></td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="5">
-                                <input type="button" id="addrow" value="Add Equipment" />
+                            <td colspan="2">
+                                <input type="button" class="btn btn-primary" id="addrow" value=" + Add Equipment" />
                             </td>
+                            <td colspan="3"></td>
                             <td colspan="1">
                                 Total Watts: <span id="totalwatts"></span>
                             </td>
@@ -106,14 +109,14 @@
                 </table>
 <!-- TABLEENDS -->
 <br><br><br>
- <div class="row calc-rows" style="margin-top: 150px;">
-   <div class="col-md-6">
+ <div class="row calc-rows">
+   <div class="col-md-6 solar-box">
         <div class="">
-            <h2>Solar Rating</h2>
+            <h3>Solar Rating</h3>
                 <div class="row mt20">
                     <div class="col-sm-6">Peak Sun Hours (PSW)</div>
-                    <div class="col-sm-3"><input type="number" name="custom_value1" value="7.5" style="width: 100%"></div>
-                    <div class="col-sm-3" style="display: -webkit-box;"><input type="number" name="custom_value2" value="4.0" style="width: 100%"><p class="rotate" style="font-size: 13px;">kwh/m<sup>2</sup></p></div>
+                    <div class="col-sm-3"><input type="number" name="custom_value1" value="7.5" style="width: 75%"></div>
+                    <div class="col-sm-3" style="display: -webkit-box;"><input type="number" name="custom_value2" value="4.0" style="width: 75%"><p class="rotate" style="font-size: 12px;">kwh/m<sup>2</sup></p></div>
                     <!-- <div class="col-sm-2">kwh/m<sup>2</sup></div> -->
                 </div>
                 <div class="row mt20">
@@ -122,13 +125,13 @@
                 </div>
                 <div class="row mt20">
                     <div class="col-sm-6">Solar Rating</div>
-                    <div class="col-sm-6"><input type="number" name="sr" style="width: 65%" disabled>watts</div>
+                    <div class="col-sm-6"><input type="number" name="sr" style="width: 75%" disabled>watts</div>
                 </div>
             </div>
         </div>
-   <div class="col-md-6">
+   <div class="col-md-6 solar-box">
         <div class="">
-            <h2>Battery Sizing</h2>  
+            <h3>Battery Sizing</h3>  
                 <div class="row mt20">
                     <div class="col-sm-6">Depth of Discharge (DOD)</div>
                     <div class="col-sm-6"><input type="number" name="dod" style="width: 75%" value="50">%</div>
@@ -144,7 +147,7 @@
         </div>
    </div>
 </div>
-<div class="row">
+<div class="row select-row">
     <div class="col-md-3">
     <div class="">
         <div class="form-group">
@@ -157,7 +160,7 @@
             <option value="250">250ah</option>
           </select>
         </div>
-        <input type="text" name="bat_num" style="width: 75%">
+        <center><input type="text" name="bat_num" style="width: 75%"></center>
         </div>
     </div>
     <div class="col-md-3">
@@ -173,7 +176,7 @@
             <option value="250">250W,24V</option>
           </select>
         </div>
-        <input type="text" name="pan_num" style="width: 75%">
+        <center><input type="text" name="pan_num" style="width: 75%"></center>
         </div>
     </div>
     <div class="col-md-3">
@@ -202,6 +205,7 @@
         </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 <div class="col-md-3 well">

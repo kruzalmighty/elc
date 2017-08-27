@@ -74,7 +74,9 @@ $(document).ready(function () {
             calculate_solar_rating();
             calculate_battery_sizing();
     });
-    $( "#sbs" ).change(function() {
+    $( "#sbs" ).change(function() { 
+        var sbs_val = $("#sbs").val();
+        $(".ps_no").text(sbs_val+"Watt");
        calculate_battery_number();
     });
 
@@ -99,7 +101,7 @@ function calculatetotalwatts() {
     var totalwatts = 0;
     $("table.order-list").find('input[name^="wpd"]').each(function () {
         totalwatts_save += +$(this).val();
-        $("#totalwatts").text(totalwatts_save.toFixed(2));
+        $(".totalwatts").text(totalwatts_save.toFixed(2));
     });
     totalwatts=totalwatts_save;
     totalwatts_save=0;
@@ -108,7 +110,7 @@ function calculatetotalwatts() {
 function calculatetotalenergy() {
     $("table.order-list").find('input[name^="epd"]').each(function () {
         totalenergy_save += +$(this).val();
-    $("#totalenergy").text(totalenergy_save.toFixed(2));
+    $(".totalenergy").text(totalenergy_save.toFixed(2));
     });
     totalenergy=totalenergy_save;
     totalenergy_save=0;
@@ -120,6 +122,8 @@ function calculate_solar_rating() {
     var sel = $('[name="sel"]').val();
     sr = (totalenergy)/(val1*sel/100);
     $('[name="sr"]').val(sr);
+    if (sr== (1/0) || isNaN(sr)){sr=0;}
+    $('.sr').text(sr);
 }
 
 function calculate_battery_sizing() {
@@ -129,6 +133,8 @@ function calculate_battery_sizing() {
     // if (doa=="") {doa=1;$('[name="doa"]').val(doa);}
     bs = (totalenergy*1.5*doa)/(12*dod/100);
     $('[name="bs"]').val(bs);
+    if (bs== (1/0) || isNaN(bs)){bs=0;}
+    $('.bs').text(bs+"Amp Hour");
 }
 
 function calculate_battery_number() {

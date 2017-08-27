@@ -344,3 +344,20 @@ border: none;
     border: 1px solid #ececec;
     margin-top: 20px;
 }
+
+.navbar-nav>li>a {
+    text-align: center;
+}
+
+.top-heading{
+    padding: 0 2%;
+}
+
+.side-heading{
+    text-align: center;
+    font-size: 12px;
+}
+
+.solar-report{
+    width: 30%;
+}

@@ -42,11 +42,14 @@
   </div>
 </nav>
 
-<div class="top-heading">
-            <div class="container-fluid">
-                <h1>Solar System Design</h1>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-8">
+<div class="top-heading pd_">
+            <div class="container-fluid pd_">
+                <h2>Solar System Design</h2>
             </div>
-            <div class="container-fluid mt20">
+            <div class="container-fluid mt20 pd_">
             <b>Select type of load</b>
                 <label class="radio-inline">
                     <input type="radio" name="optradio" value="ac" checked>AC Load only
@@ -59,11 +62,8 @@
                 </label>
             </div>
 </div>
-<div class="container-fluid">
-<div class="row">
-<div class="main-div">
+<div class="main-div  text-box">
 <div class="load-head"><h3>LOAD CALCULATION</h3></div>
-<div class="col-md-9 text-box">
                 <table id="myTable" class="display order-list" cellspacing="0" width="100%">
                     <thead>
                         <tr>
@@ -204,11 +204,12 @@
 </div>
 </div>
 </div>
-<div class="col-md-3 solar-report">
+<div class="col-md-4 solar-report">
     <div class="report">
     <div class="side-heading">
         <h2>Solar System Report</h2>
-        <div class="text-left">
+    </div>
+        <div class="text-left details">
         <div class="row">
             <div class="col-md-6">
                 <label>Total Watts Per Day:</label>
@@ -249,8 +250,55 @@
                 <span class="ps_no"></span>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Battery Size:</label>
+            </div>
+            <div class="col-md-6">
+                <span class="bat_size"></span>
+            </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Solar Charge Controller:</label>
+            </div>
+            <div class="col-md-6">
+                <span class="solar_charge_ctrl"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Solar Inverter:</label>
+            </div>
+            <div class="col-md-6">
+                <span class="solar_inv"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Cable Size:</label>
+            </div>
+            <div class="col-md-6">
+                <span class="cab_size"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Circuit/breakers:</label>
+            </div>
+            <div class="col-md-6">
+                <span class="ckt_brk"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Battery Connecters:</label>
+            </div>
+            <div class="col-md-6">
+                <span class="bat_con"></span>
+            </div>
+        </div>
+        </div>
     </div>
 </div>
 </div>

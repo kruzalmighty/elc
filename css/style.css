@@ -308,7 +308,7 @@ border: none;
     margin: 0 !important;
 }
 @media all and (min-width: 992px){
-   .text-box,.load-head{
+   .load-head{
     width: 70%;
 } 
 }
@@ -358,6 +358,28 @@ border: none;
     font-size: 12px;
 }
 
-.solar-report{
+/*.solar-report{
     width: 30%;
+}*/
+
+.top-heading h2{
+    text-transform: uppercase;
+}
+
+.pd_{
+    padding: 0 !important;
+}
+
+.solar-report h2{
+    text-transform: uppercase;
+    float: left;
+}
+
+.solar-report .text-left{
+    /*margin-top: 35px;*/
+    line-height: 40px;
+}
+
+.details{
+    margin-top: 20px;
 }

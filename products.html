@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ELC</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendor/jquery/dataTables.responsive.css" rel="stylesheet">
+    <link href="vendor/jquery/jquery-ui.css" rel="stylesheet">
+    <link href="vendor/jquery/jquery.dataTables.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="jumbotron">
+    <div class="text-center">
+        <button class="btn btn-primary">Get JSON data</button>  
+    </div>
+</div>
+
+<script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery/jquery.dataTables.min.js"></script>
+    <script src="vendor/jquery/dataTables.responsive.js"></script>
+    <script src="vendor/jquery/jquery-ui.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            var root = 'https://jsonplaceholder.typicode.com';
+            var items = [];
+            $("button").click(function(){
+                $.ajax({
+                  url: root + '/posts',
+                  method: 'GET'
+              }).then(function(data) {
+                    console.log(data);
+                $.each(data, function(i, field){
+                    var title = JSON.stringify(field.title);
+                    var id = JSON.stringify(field.id);
+                    items.push( "<li class='list-group-item' id='" + i + "'>" + id + ')&nbsp;' + title + "</li>" );
+                // $("div").append(myJSON + " ");
+            });
+                // $("div").append(myJSON);
+                $( "<ul/>", {"class": "list-group",html: items.join( "" )}).appendTo( "div.jumbotron" );
+            });
+          });
+        });
+</script>
+</body>
+</html>
